@@ -1,236 +1,72 @@
+
 <div align="center">
   <img src="https://github.com/OlaLeonardoAmaral/CertificacaoNLW/assets/86934921/e9ff2adc-901f-49d1-84f7-feae72a11e5f" style="height: 55px; width: auto;">
 </div>
 
 <h1 align="center">
-  NLW Expert · Trilha: Java
+  NLW Expert · Trilha Java
 </h1>
 
+<p align="center">
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen"/>
+  <img alt="Java" src="https://img.shields.io/badge/Java-17-blue"/>
+  <img alt="Spring Boot" src="https://img.shields.io/badge/Spring%20Boot-2.7-brightgreen"/>
+  <img alt="PostgreSQL" src="https://img.shields.io/badge/PostgreSQL-13.0-blue"/>
+  <img alt="Docker" src="https://img.shields.io/badge/Docker-Compose-blue"/>
+</p>
 
-<div>
-  <p align="left">
-  Este projeto consiste na criação de uma API com SpringBoot, fornecendo acesso a uma variedade de questões relacionadas a uma tecnologia escolhida pelo usuario para facilitar a preparação para a certificação na área selecionada.
-  </p>
-  <p>
-      Orientado e conduzido por
-    <a href="www.youtube.com/@DanieleLeao">
-      Daniele Leão
-    </a>, educadora da Rocketseat.
-  </p>
+<p align="center">
+  Este projeto foi desenvolvido durante a 14ª edição da <a href="https://rocketseat.com.br">Next Level Week</a> (NLW Expert), com foco na construção de uma API em Java, utilizando Spring Boot para facilitar a preparação para certificações na área de tecnologia. Durante o desenvolvimento, foram aplicados conceitos de arquitetura sólida (SOLID), integração com banco de dados usando PostgreSQL e containerização com Docker.
+</p>
+
+---
+
+## 🚀 Tecnologias Utilizadas
+
+<div align="center">
+  <img align="center" alt="Java" height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg">
+  <img align="center" alt="Spring Boot" height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg">
+  <img align="center" alt="PostgreSQL" height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg">
+  <img align="center" alt="Docker" height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg">
+  <img align="center" alt="Hibernate" height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hibernate/hibernate-original.svg">
 </div>
 
 ---
-<h3 align="center">
-  Tecnologias utilizadas
-</h3>
-<div align="center">
-  <img align="center" alt="Leo-HTML" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg">
-  <img align="center" alt="Leo-CSS" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg">
-  <img align="center" alt="Leo-Js" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg">
-  <img align="center" alt="Leo-Js" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg">
-</div>  
+
+## 📖 Descrição
+
+Este projeto é uma API voltada para a gestão de questões relacionadas a certificações tecnológicas. O usuário pode escolher uma tecnologia e responder a uma série de perguntas que simulam uma certificação. Utilizando **Spring Boot**, **PostgreSQL** e **Docker**, a aplicação também foca em princípios de **SOLID** e práticas de **Lambda** e **debug avançado** para otimizar a performance e a clareza do código.
+
+### Funcionalidades:
+- **Verificação de Certificação**: Verifica se o estudante já obteve uma certificação anterior.
+- **Banco de Questões**: Retorna um conjunto de perguntas sobre a tecnologia escolhida.
+- **Envio de Respostas**: Permite que os usuários respondam às questões e obtenham a pontuação.
+- **Ranking**: Exibe os 10 melhores usuários com base nas pontuações.
 
 ---
 
-## Requisitos
-- <a href="https://efficient-sloth-d85.notion.site/Instalando-Java-17-a6636205fb13442d86998dda72710fdc">Java 17</a>
-- <a href="https://efficient-sloth-d85.notion.site/Maven-4b297322549040f1ad2bf61d6080dd0a">Maven</a>
-- <a href="https://efficient-sloth-d85.notion.site/Instalando-Docker-e-Docker-Compose-7953729d22554795b50033c4c19eae70">Docker</a>
+## 🔥 Endpoints
 
-## HTTP
+| Método | Endpoint                             | Descrição                                                |
+|--------|--------------------------------------|----------------------------------------------------------|
+| POST   | `/students/verifyIfHasCertification`  | Verifica se o estudante já possui certificação.           |
+| GET    | `/questions/technology/{technology}`  | Retorna questões de uma determinada tecnologia.           |
+| POST   | `/students/certification/answer`      | Envia as respostas das questões de certificação.          |
+| GET    | `/ranking/top10`                      | Retorna o top 10 dos usuários com as maiores pontuações.  |
 
+---
 
-### POST `/students/verifyIfHasCertification`
+## 📚 Aprendizados
 
-Verifica se o estudante já tem uma certificação.
+Durante o desenvolvimento deste projeto, adquiri experiência prática com:
+- **Spring Boot**: Configuração avançada e otimização de APIs RESTful.
+- **Banco de Dados**: Integração com **PostgreSQL** utilizando **Spring Data JPA** e **Hibernate ORM** para persistência eficiente dos dados.
+- **Docker Compose**: Containerização do ambiente de desenvolvimento e configuração automatizada.
+- **SOLID e Lambda**: Aplicação de princípios de design para manter o código escalável e de fácil manutenção.
+- **Debug Avançado**: Uso de técnicas de debugging para solucionar problemas de lógica e performance.
 
-#### Request body
+---
 
-```json
-{
-  "email": "testando123@hotmail.com",
-  "technology": "JAVA"
-}
-```
+## 🏆 Resultados
 
-#### Response body
-
-```json
-{
-  "message": "Usuário não pode fazer a prova"
-}
-
-OR
-
-{
-  "message": "Usuário pode fazer a prova"
-}
-
-```
-
-### GET `/questions/technology/{technology}`
-
-Retorna as questões e alternativas de uma determinada tecnologia.
-
-#### Response body
-
-```json
-
-[
-  {
-    "id": "c5f02721-6dc3-4fa6-b46d-6f2e8dca9c66",
-    "technology": "JAVA",
-    "description": "Como criar uma classe em Java?",
-    "alternatives": [
-      {
-        "id": "bafdf631-6edf-482a-bda9-7dce1efb1890",
-        "description": "Usando a palavra-chave \"class\""
-      },
-      {
-        "id": "98f6891b-5f14-4b8e-bb87-46456a2610d4",
-        "description": "Definindo uma interface em Java"
-      },
-      {
-        "id": "993a7d37-62a0-4040-810d-d667e3f7a891",
-        "description": "Utilizando métodos estáticos"
-      },
-      {
-        "id": "98bf8d0f-dc1c-4db0-b09c-94246089aa02",
-        "description": "Criando um construtor padrão"
-      }
-    ]
-  },
-  {...},
-  {...}
-]
-```
-
-
-### POST `/students/certification/answer`
-
-Onde você ira enviar as suas respostas para cada questão de uma determinada tecnologia.
-
-#### Request Body
-
-```json
-{
-  "email": "testando123@hotmail.com",
-  "technology": "JAVA",
-  "questionAndAnswers": [
-      {
-        "questionID": "c5f02721-6dc3-4fa6-b46d-6f2e8dca9c66",
-        "alternativeID": "bafdf631-6edf-482a-bda9-7dce1efb1890"
-      },
-      {
-        "questionID": "b0ec9e6b-721c-43c7-9432-4d0b6eb15b01",
-        "alternativeID": "f8e6e9b3-199b-4f0d-97ce-7e5bdc080da9"
-      },
-      {
-        "questionID": "f85e9434-1711-4e02-9f9e-7831aa5c743a",
-        "alternativeID": "d3e51a56-9b97-4bb8-9827-8bcf89f4b276"
-      }
-    ]
-}
-```
-
-
-#### Response body
-
-```json
-{
-  "id": "2ff73dfc-e680-4bdb-9801-6b81a9b308a7",
-  "technology": "JAVA",
-  "grade": 3,
-  "studentID": "33617864-15ac-4a8c-91a2-55b3c316928d",
-  "studentEntity": null,
-  "answersCertificationsEntity": [
-    {
-      "id": "65c00036-9f89-4fd6-b734-1fe69e18813e",
-      "certificationID": "2ff73dfc-e680-4bdb-9801-6b81a9b308a7",
-      "studentID": null,
-      "studentEntity": null,
-      "questionID": "c5f02721-6dc3-4fa6-b46d-6f2e8dca9c66",
-      "answerID": "bafdf631-6edf-482a-bda9-7dce1efb1890",
-      "createdAt": "2024-02-09T08:42:12.002493",
-      "correct": true
-    },
-    {
-      "id": "7a64ae06-3140-45b1-abf0-eabda93fb9fa",
-      "certificationID": "2ff73dfc-e680-4bdb-9801-6b81a9b308a7",
-      "studentID": null,
-      "studentEntity": null,
-      "questionID": "b0ec9e6b-721c-43c7-9432-4d0b6eb15b01",
-      "answerID": "f8e6e9b3-199b-4f0d-97ce-7e5bdc080da9",
-      "createdAt": "2024-02-09T08:42:12.006072",
-      "correct": true
-    },
-    {
-      "id": "2243b29d-f3e9-48ed-b3a7-f4a4c00f2cc0",
-      "certificationID": "2ff73dfc-e680-4bdb-9801-6b81a9b308a7",
-      "studentID": null,
-      "studentEntity": null,
-      "questionID": "f85e9434-1711-4e02-9f9e-7831aa5c743a",
-      "answerID": "d3e51a56-9b97-4bb8-9827-8bcf89f4b276",
-      "createdAt": "2024-02-09T08:42:12.006736",
-      "correct": true
-    }
-  ],
-  "createdAt": "2024-02-09T08:42:11.993524"
-}
-
-```
-
-
-### GET `/ranking/top10`
-
-Retorna o top 10 de usuarios com as maiores notas.
-
-#### Response body
-
-```json
-[
-  {
-    "id": "a407151a-c6a2-4922-b054-92685a992cef",
-    "technology": "JAVA",
-    "grade": 3,
-    "studentID": "e3096ba8-bf8f-478f-9e74-5ea5ab09f5a3",
-    "studentEntity": {
-      "id": "e3096ba8-bf8f-478f-9e74-5ea5ab09f5a3",
-      "email": "amaral3442@codes.com",
-      "createdAt": "2024-02-08T11:49:20.33859"
-    },
-    "answersCertificationsEntity": [],
-    "createdAt": "2024-02-08T11:49:20.350954"
-  },
-  {
-    "id": "2ff73dfc-e680-4bdb-9801-6b81a9b308a7",
-    "technology": "JAVA",
-    "grade": 3,
-    "studentID": "33617864-15ac-4a8c-91a2-55b3c316928d",
-    "studentEntity": {
-      "id": "33617864-15ac-4a8c-91a2-55b3c316928d",
-      "email": "testando123@hotmail.com",
-      "createdAt": "2024-02-09T08:42:11.978983"
-    },
-    "answersCertificationsEntity": [],
-    "createdAt": "2024-02-09T08:42:11.993524"
-  },
-  {
-    "id": "1fce7030-d5f9-4338-9262-0b8a69d7c88f",
-    "technology": "JAVA",
-    "grade": 2,
-    "studentID": "045ce8e1-1c9d-40af-ab56-354bf58b9d13",
-    "studentEntity": {
-      "id": "045ce8e1-1c9d-40af-ab56-354bf58b9d13",
-      "email": "lucas3442@teste.com",
-      "createdAt": "2024-02-07T23:44:38.740027"
-    },
-    "answersCertificationsEntity": [],
-    "createdAt": "2024-02-07T23:44:38.750305"
-  }
-]
-
-```
-
-
-
+A aplicação gerou um ambiente interativo e dinâmico, facilitando a preparação de usuários para certificações. O sistema de ranking engaja os participantes, e a flexibilidade na escolha das tecnologias testadas torna o projeto versátil para diversas áreas.
